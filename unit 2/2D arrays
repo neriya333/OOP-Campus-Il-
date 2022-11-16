@@ -1,4 +1,5 @@
 /**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Q1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * Main class of the Java program. 
  * 
  */
@@ -24,3 +25,33 @@ public class Main {
         Image.printImage(pixels);
     }
 }
+
+
+
+/**
+ * Main class of the Java program. 
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Q2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+public class Main { 
+    public enum DayCapacity {FULL_DAY, HALF_DAY, DAY_OFF}
+    
+    public static void main(String[] args) {
+        DayCapacity[][] februaryWorkDays = new DayCapacity[4][7];
+        
+        //the method WorkCalendar.getWorkingDays() initializing the 2d array with data 
+        februaryWorkDays = WorkCalendar.getWorkingDays(februaryWorkDays);
+    
+        int numberOfFullWorkDays = 0;    
+        //write your code here and save it to numberOfFullWorkDays variable. 
+        for (DayCapacity[] week : februaryWorkDays)
+            for(DayCapacity d: week)
+                if (d == DayCapacity.FULL_DAY)
+                    numberOfFullWorkDays++;
+        
+        //answer should be equal to 20
+        System.out.println(numberOfFullWorkDays);   
+  }
+}
+
+
+
